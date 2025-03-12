@@ -1,69 +1,84 @@
 *,
 *::before,
 *::after {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-      font-family: monospace;
-      font-size: 14px;
-      color: #c4c9d2;
-      width: 100vw;
-      height: 100vh;
-      padding: 20px;
-      overflow: auto;
-      background-color: #0d0e17;
+    font-family: monospace;
+    font-size: 14px;
+    color: #c4c9d2;
+    padding: 20px;
+    background-color: #0d0e17;
 }
 
 .label-key {
-      color: #498af2;
+    color: #498af2;
 }
 
 .label-key.noenum {
-      opacity: 0.5;
+    opacity: 0.5;
 }
 
 .label-value.string {
-      color: #15c999;
+    color: #15c999;
 }
 
 .label-value.number,
 .label-value.boolean {
-      color: #965cff;
+    color: #965cff;
 }
 
 .label-value.function {
-      font-style: italic;
+    font-style: italic;
 }
 
 .label-value.function > span {
-      color: #c96b15;
+    color: #c96b15;
+}
+
+.tree {
+    white-space: nowrap;
+}
+
+.tree[open] > .tree-body {
+    border-left: 1px solid #333;
 }
 
 .tree-head {
-      white-space: nowrap;
-      list-style-type: none;
+    cursor: pointer;
+    display: inline-block;
 }
 
-.tree-body {
-      padding-left: 20px;
-      display: flex;
-      flex-direction: column;
+.tree-head::-webkit-details-marker {
+    display: none;
 }
 
-.tree-child {
-      white-space: nowrap;
-      margin-top: 5px;
-      margin-left: 16px;
-}
-
-.tree > .tree-head::before {
-      content: "\25B8";
-      font-size: 16px;
+.tree-head::before {
+    content: "\25B8";
+    display: inline-block;
+    margin-right: 3px;
+    transition: transform 0.2s;
 }
 
 .tree[open] > .tree-head::before {
-      content: "\25BE";
+    transform: rotate(90deg);
+}
+
+.tree-body {
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.tree-child {
+    white-space: nowrap;
+    margin: 3px 0;
+}
+
+.type-pill {
+    font-size: 0.8em;
+    opacity: 0.7;
+    margin-left: 8px;
 }
