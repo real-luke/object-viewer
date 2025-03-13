@@ -1,10 +1,9 @@
 // ObjectViewer: A utility to view JavaScript objects in a tree structure.
-// Usage: ObjectViewer.view(data, container)
-// where data is the object to view, and container is a DOM element to append the tree to.
 
 const ObjectViewer = {
     view(data, container) {
         container.innerHTML = "";
+        container.classList.add("object-viewer");
         if (this.isPrimitive(data)) {
             const label = this.formatter("", data, true);
             container.append(this.createPrimitiveElement(label));
