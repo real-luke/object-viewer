@@ -1,0 +1,75 @@
+.object-viewer {
+    font-family: monospace;
+    font-size: 14px;
+    color: #c4c9d2;
+    background: #0d0e17;
+    padding: 12px;
+    border-radius: 4px;
+    max-width: 800px;
+    overflow: auto;
+}
+
+.tree-node {
+    white-space: nowrap;
+    margin: 2px 0;
+}
+
+.tree-node[open] > .tree-children {
+    border-left: 1px solid #2a2d3a;
+    margin-left: 12px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 8px;
+}
+
+.tree-header {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    margin-left: 18px;
+}
+
+.tree-header:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+details.tree-node > .tree-header::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 6px;
+    font-size: 0.8em;
+    color: #666;
+    transition: transform 0.2s;
+}
+
+.tree-node[open] > .tree-header::before {
+    transform: rotate(90deg);
+}
+
+.label-key { color: #498af2; }
+.label-key.noenum { opacity: 0.5; }
+
+.label-value.string { color: #15c999; }
+.label-value.number,
+.label-value.boolean { color: #965cff; }
+.label-value.function { font-style: italic; }
+.label-value.null,
+.label-value.undefined { color: #666; }
+
+.tree-node:not([open]) .label-value.object {
+    color: #666 !important;
+}
+
+.type-pill {
+    color: #666;
+    font-size: 0.9em;
+    margin-left: 6px;
+}
+
+.icon {
+    color: #c96b15;
+    font-style: normal;
+}
