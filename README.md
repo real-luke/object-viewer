@@ -23,8 +23,8 @@ A lightweight utility for visualizing JavaScript objects in a collapsible tree s
 
 Include directly in HTML:
 ```html
-<link rel="stylesheet" href="ObjectViewer.css">
-<script src="ObjectViewer.js"></script>
+<link rel="stylesheet" href="objviewer.css">
+<script src="objviewer.js"></script>
 ```
 
 ## Usage
