@@ -1,8 +1,8 @@
 # ObjectViewer - JavaScript Object Visualizer
 
-A lightweight utility for visualizing JavaScript objects in a collapsible tree structure directly in the browser.
+A lightweight utility for visualizing JavaScript objects in a collapsible tree structure.
 
-![ObjectViewer Demo](demo-screenshot.png) *(Screenshot placeholder)*
+[ObjectViewer Demo](https://codepen.io/jundell/pen/dPyZGjO)
 
 ## Features
 
@@ -21,9 +21,24 @@ A lightweight utility for visualizing JavaScript objects in a collapsible tree s
 
 ## Installation
 
-### Browser Usage
 Include directly in HTML:
 ```html
 <link rel="stylesheet" href="ObjectViewer.css">
 <script src="ObjectViewer.js"></script>
+```
+
+## Usage
+
+Run `ObjectViewer.view(data, container)` where data is the object to view, and container is a DOM element to append the tree to.
+```js
+const wrapper = document.getElementById("wrapper");
+const data = {
+  name: "John",
+  age: 30,
+  date: new Date(),
+  married: false,
+  address: { street: "123 Main St", city: "Anytown" }
+};
+
+ObjectViewer.view(data, document.body);
 ```
