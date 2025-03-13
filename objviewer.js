@@ -198,4 +198,4 @@ const ObjectViewer = {
     }
 };
 
-export ObjectViewer;
+window.ObjectViewer = ObjectViewer;
